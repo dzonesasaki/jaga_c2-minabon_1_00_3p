@@ -2,7 +2,7 @@
 .DS_Store
 
 # Unity
-[Ll]ibrary/
+UnityKinect/[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 
@@ -24,4 +24,4 @@ UnityKinect/Assets/MoCap/
 UnityKinect/Assets/Sound/
 UnityKinect/myRecord/
 UnityKinect/ProjectSettings/
-
+UnityKinect/Library/
