@@ -30,7 +30,7 @@ public class MyRec : MonoBehaviour {
 
 	void Start () {
 
-		this.renderer.material.color = Color.blue;
+		this.GetComponent<Renderer>().material.color = Color.blue;
 
 		string name = PlayerPrefs.GetString("CharaName");
 		if(name==null){
@@ -125,7 +125,7 @@ public class MyRec : MonoBehaviour {
 	
 	public void rec(){
 		if(myState==-1){
-			this.renderer.material.color=Color.red;
+			this.GetComponent<Renderer>().material.color=Color.red;
 
 			DateTime dtNow = DateTime.Now;
 			string outName = dtNow.ToString("yyyy_MM_dd_HH_mm_ss")+".dat";
@@ -141,7 +141,7 @@ public class MyRec : MonoBehaviour {
 		else{
 			time = 0;
 			myState=-1;
-			this.renderer.material.color=Color.blue;
+			this.GetComponent<Renderer>().material.color=Color.blue;
 			writer.Close();
 		}
 	}
