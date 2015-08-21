@@ -11,7 +11,8 @@ public class MyTraceObj : MonoBehaviour {
 	private float fDefaultVelCam = 0.01f;
 	public double CamDistanceToObj; 
 	private double StopDistanceToObj=2.0f;
-	private double dFactorReduce = 5f;
+	private double StopDistanceMargin=0.1f;
+	private double dFactorReduce = 1f;
 
 
 	// Use this for initialization
@@ -43,7 +44,7 @@ public class MyTraceObj : MonoBehaviour {
 				}
 		this.transform.LookAt (ObjTaget [IndxTraceObj].transform.position);
 		CamDistanceToObj = Vector3.Distance (this.transform.position, ObjTaget [IndxTraceObj].transform.position);
-		fVelCamCurr = fDefaultVelCam * (float)(1 - System.Math.Exp (-CamDistanceToObj/dFactorReduce));
+		fVelCamCurr = fDefaultVelCam * (float)(1 - System.Math.Exp (-System.Math.Abs ((CamDistanceToObj-StopDistanceToObj+StopDistanceMargin))/dFactorReduce));
 
 		Vector3 vectDir = new Vector3 (0, 0, 0);
 		//vectDir = Vector3.MoveTowards (ObjTaget [IndxTraceObj - 1].transform.position, ObjTaget [IndxTraceObj].transform.position, fVectCam);
