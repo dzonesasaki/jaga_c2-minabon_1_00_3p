@@ -8,10 +8,10 @@ public class MyTraceObj : MonoBehaviour {
 	private int NumObjTgt;
 	private bool FlagActive;
 	public float fVelCamCurr = 0.03f;
-	private float fDefaultVelCam = 0.03f;
+	private float fDefaultVelCam = 0.05f;
 	public double CamDistanceToObj; 
 	private double StopDistanceToObj=2.0f;
-	private double StopDistanceMargin=0.15f;
+	private double StopDistanceMargin=0.2f;
 	private double dFactorReduce = 1f;
 
 	// screenRecoding , refere to https://gist.github.com/keijiro/7429201
