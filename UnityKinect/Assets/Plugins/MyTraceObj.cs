@@ -11,7 +11,7 @@ public class MyTraceObj : MonoBehaviour {
 	private float fDefaultVelCam = 0.03f;
 	public double CamDistanceToObj; 
 	private double StopDistanceToObj=2.0f;
-	private double StopDistanceMargin=0.3f;
+	private double StopDistanceMargin=0.15f;
 	private double dFactorReduce = 1f;
 
 	// screenRecoding , refere to https://gist.github.com/keijiro/7429201
