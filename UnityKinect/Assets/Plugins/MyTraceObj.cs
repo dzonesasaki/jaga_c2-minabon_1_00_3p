@@ -8,10 +8,10 @@ public class MyTraceObj : MonoBehaviour {
 	private int NumObjTgt;
 	private bool FlagActive;
 	public float fVelCamCurr = 0.03f;
-	private float fDefaultVelCam = 0.05f;
+	private float fDefaultVelCam = 0.06f;
 	public double CamDistanceToObj; 
 	private double StopDistanceToObj=2.0f;
-	private double StopDistanceMargin=0.25f;
+	private double StopDistanceMargin=0.15f;
 	private double dFactorReduce = 1f;
 
 	// screenRecoding , refere to https://gist.github.com/keijiro/7429201
@@ -63,7 +63,7 @@ public class MyTraceObj : MonoBehaviour {
 				}
 		this.transform.LookAt (ObjTaget [IndxTraceObj].transform.position);
 		CamDistanceToObj = Vector3.Distance (this.transform.position, ObjTaget [IndxTraceObj].transform.position);
-		fVelCamCurr = fDefaultVelCam * (float)(1 - System.Math.Exp (-System.Math.Abs (System.Math.Pow((CamDistanceToObj-StopDistanceToObj+StopDistanceMargin)/dFactorReduce,3))));
+		fVelCamCurr = fDefaultVelCam * (float)(1 - System.Math.Exp (-System.Math.Abs (System.Math.Pow((CamDistanceToObj-StopDistanceToObj+StopDistanceMargin)/dFactorReduce,3.1))));
 
 		Vector3 vectDir = new Vector3 (0, 0, 0);
 		//vectDir = Vector3.MoveTowards (ObjTaget [IndxTraceObj - 1].transform.position, ObjTaget [IndxTraceObj].transform.position, fVectCam);
